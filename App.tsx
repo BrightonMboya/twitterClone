@@ -1,11 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import Card from "./src/components/Card";
 import { profiles } from "./src/components/dummyData";
 
 export default function App() {
   return (
-    <>
+    <ScrollView>
       <View style={styles.nav}>
         <Image
           source={{
@@ -29,7 +28,7 @@ export default function App() {
           />
         ))}
       </View>
-    </>
+    </ScrollView>
   );
 }
 
@@ -47,11 +46,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 20,
   },
-  cardView: {
-    marginTop: 20,
-    marginLeft: 20,
-  },
+
   cardRow: {
     gap: 20,
+    marginTop: 40,
   },
 });
