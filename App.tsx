@@ -16,7 +16,7 @@ export default function App() {
         <Stack.Screen
           name="Profile"
           component={Profile}
-          options={{ title: "Edit Profile" }}
+          options={{ title: "Edit Profile", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

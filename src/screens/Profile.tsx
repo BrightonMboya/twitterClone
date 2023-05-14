@@ -1,8 +1,13 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, Button } from "react-native";
 
-const Profile = () => {
-  return <Text style={{ margin: 50 }}>Some Fancy ass Profile</Text>;
+const Profile = ({ navigation }: any) => {
+  return (
+    <>
+      <Text style={{ margin: 50 }}>Some Fancy ass Profile</Text>
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+    </>
+  );
 };
 
 export default Profile;
