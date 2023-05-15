@@ -59,10 +59,12 @@ const Home = ({ navigation }: any) => {
           .map((profile) => (
             <Card
               key={profile.id}
+              id={profile.id}
               profile={profile.profile}
               name={profile.name}
               title={profile.text}
               content={profile.bio}
+              navigation={navigation}
             />
           ))}
       </View>

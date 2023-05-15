@@ -1,16 +1,17 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Button } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import IoniIcons from "react-native-vector-icons/Ionicons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 interface CardProps {
   name: string;
+  id: number;
   title: string;
   content: string;
   profile: string;
+  navigation: any;
 }
 
-const Card = ({ name, title, content, profile }: CardProps) => {
+const Card = ({ name, title, content, profile, navigation, id }: CardProps) => {
   return (
     <>
       <View style={styles.card}>
@@ -22,7 +23,17 @@ const Card = ({ name, title, content, profile }: CardProps) => {
             style={{ width: 40, height: 40, borderRadius: 100 }}
           />
           <Text style={{ fontSize: 15 }}>{name}</Text>
+          <Button
+            title="Follow"
+            onPress={() => {
+              navigation.navigate("Profile", {
+                id: id,
+                otherParam: "Love you Daddy",
+              });
+            }}
+          />
         </View>
+
         <Text style={{ marginTop: 2, paddingLeft: 10 }}>{title}</Text>
         <View style={styles.iconView}>
           <AntDesign name="like2" size={15} color="#ddd" />
@@ -43,7 +54,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#ddd",
     width: 350,
-    height: 125,
+    height: 130,
   },
   profile: {
     flexDirection: "row",
